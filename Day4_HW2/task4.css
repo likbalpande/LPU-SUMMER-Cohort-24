@@ -1,0 +1,114 @@
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body>div{
+    background-color: blueviolet;
+    
+    margin: 48px;
+    height: 200px;
+    width: 200px;
+}
+
+.c1,.c2,.c3,.c4{
+    background-color: blue;
+    color: white;
+    font-size: 32px;
+    height: 75px;
+    width: 75px;
+}
+
+.c2{
+    position: relative;
+    left: 75px;
+}
+
+.c3{
+    position: relative;
+    left: 75px; 
+} */
+
+
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body>div{
+    background-color: blueviolet;
+
+    margin: 48px;
+    height: 200px;
+    width: 200px;
+}
+
+.c1,.c2,.c3,.c4{
+    background-color: blue;
+    color: white;
+    font-size: 32px;
+    height: 75px;
+    width: 75px;
+}
+
+.c1{
+    position: relative;
+    top: 25px;
+    left: 25px;
+    background-color: aquamarine;
+}
+
+.c2{
+    position: relative;
+    left: 75px;
+}
+
+.c3{
+    position: absolute;
+    right: 0;
+    top: 0;
+} */
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body>div{
+    background-color: blueviolet;
+
+    margin: 48px;
+    height: 200px;
+    width: 200px;
+}
+
+.c1,.c2,.c3,.c4{
+    background-color: blue;
+    color: white;
+    font-size: 32px;
+    height: 75px;
+    width: 75px;
+}
+
+.c1{
+    position: absolute;
+}
+
+.c3{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    position: absolute;
+}
+
+.c4{
+    position: relative;
+    z-index: 1;
+}
+/* .c3{
+    z-index: -1;
+} */

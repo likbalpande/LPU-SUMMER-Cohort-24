@@ -1,0 +1,182 @@
+/* .btn{
+    display: block;
+    background-color: rgb(4, 170, 109);
+    color: rgb(255, 255, 255);
+    width: fit-content;
+    margin: 10px auto;
+
+    font-size: 16px;
+    padding: 0.4em 1em;
+    border-radius: 0.5em;
+    border: none;
+
+    opacity: 0.8;
+
+    transition: all 3000ms ease;
+}
+
+.btn:hover{
+    background-color: blue;
+    opacity: 1;
+    cursor: pointer;
+    scale: 1.2;
+} */
+
+/* a{
+    color: red;
+    text-decoration: none;
+}
+
+a:visited{
+    color: blue;
+} */
+
+/* ul{
+    background-color: beige;
+}
+
+li:first-child{
+    color: blue;
+}
+
+p:nth-child(4){
+    color: red;
+} */
+
+
+/* ul{
+    background-color: beige;
+}
+
+li:first-of-type{
+    color: blue;
+}
+
+p:first-of-type{
+    color: green;
+} */
+
+/* .login-btn{
+    text-decoration: underline;
+    color: blue;
+} */
+
+/* .child{
+    background-color: orange;
+    border: 1px solid black;
+    flex-basis: 200px;
+    flex-shrink: 0;
+}
+
+.search{
+    height: 175px;
+}
+
+.child2{
+    padding: 48px 24px;
+    height: 150px;
+    flex-shrink: 1;
+}
+
+.parent{
+    background-color: aqua;
+    height: 300px;
+
+    display: flex;
+
+    align-items: baseline;
+    justify-content: space-between;
+} */
+/* *{
+    padding: 0;
+    margin: 0;
+} */
+
+/* .parent{
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    background-color: aquamarine;
+    align-items: flex-start;
+
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.child2{
+    height: 200px;
+}
+
+.search{
+    height: 100px;
+    align-self: flex-end;
+}
+
+
+.child{
+    background-color: aliceblue;
+    border: 1px solid grey;
+} */
+
+/* 
+.child{
+    background-color: aliceblue;
+    border: 1px solid grey;
+}
+
+.parent{
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    background-color: yellow;
+
+    grid-auto-rows: 100px;
+    row-gap: 10px;
+    column-gap: 20px;
+
+    justify-content: center;
+    justify-items: center;
+
+    align-content: center;
+    align-items: center;
+}
+
+.child2{
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+} */
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.parent{
+    background-color: yellow;
+    height: 300px;
+    width: 300px;
+    margin: 48px;
+}
+
+.child1{
+    background-color: aqua;
+    height: 100px;
+    width: 100px;
+}
+
+.child2{
+    background-color: orange;
+    height: 100px;
+    width: 100px;
+}
+
+.child1{
+    /* z-index:-1; */
+    /* position: relative;
+    left: 0;
+    top: 20px; */
+}

@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    border-bottom: 4px dashed blue;
+    padding: 16px;
+
+    display: flex;
+    gap: 24px;
+}
+
+nav input{
+    flex-grow: 1;
+}
+
+.hamburger{
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    border-radius: 50%;
+}
