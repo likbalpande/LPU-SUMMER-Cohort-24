@@ -133,6 +133,7 @@ const renderUI = (data)=>{
         card.innerHTML = `
             <h3>${products[i].title}</h3>
             <p>${products[i].price}</p>
+            <img src="${products[i].thumbnail}" />
         `;
         root.appendChild(card);
     }
