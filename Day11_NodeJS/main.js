@@ -1,6 +1,7 @@
 const http = require("http");
 const fsPromises = require("fs/promises");
 const fs = require("fs");
+const url = require("url");
 
 const dataText = fs.readFileSync("./data.json");
 const data = JSON.parse(dataText);
@@ -9,8 +10,9 @@ const app = http.createServer(async (req, res) => {
     res.writeHead(200, {
         "Content-Type": "text/html",
     });
-    const route = req.url;
-    switch (route) {
+    const { query, pathname } = url.parse(req.url, true);
+
+    switch (pathname) {
         case "/": {
             const bf = await fsPromises.readFile("./pages/homepage.html");
             res.end(bf);
@@ -30,6 +32,10 @@ const app = http.createServer(async (req, res) => {
             }
             text = text.replace("$PRODUCTS$", productsText);
             res.end(text);
+            break;
+        }
+        case "/view": {
+            res.end(`<div><h2>This is product id = ${query.id}</h2></div>`);
             break;
         }
         default: {
