@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Watch",
+        "description": "This is a wrist watch by Titan",
+        "price": 4000,
+        "thumbnail": "https://images-cdn.ubuy.co.in/654b8e16333d0d5c3130b3e8-lige-mens-watches-waterproof-stainless.jpg",
+        "id": 2
+    },
+    {
+        "title": "Watch",
+        "description": "This is a wrist watch by Titan",
+        "price": 4000,
+        "thumbnail": "https://images-cdn.ubuy.co.in/654b8e16333d0d5c3130b3e8-lige-mens-watches-waterproof-stainless.jpg",
+        "id": 3
+    },
+    {
+        "title": "Watch",
+        "description": "This is a wrist watch by Titan",
+        "price": 4000,
+        "thumbnail": "https://images-cdn.ubuy.co.in/654b8e16333d0d5c3130b3e8-lige-mens-watches-waterproof-stainless.jpg",
+        "id": 4
+    }
+]

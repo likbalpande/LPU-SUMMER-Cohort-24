@@ -15,16 +15,12 @@ const app = http.createServer(async (req, res) => {
 
     switch (pathname) {
         case "/": {
-            const bf = await fsPromises.readFile(
-                `${__dirname}/pages/homepage.html`
-            );
+            const bf = await fsPromises.readFile(`${__dirname}/pages/homepage.html`);
             res.end(bf);
             break;
         }
         case "/products": {
-            const bf = await fsPromises.readFile(
-                `${__dirname}/pages/productsPage.html`
-            );
+            const bf = await fsPromises.readFile(`${__dirname}/pages/productsPage.html`);
             let text = bf.toString();
             let productsText = "";
             for (let i = 0; i < data.length; i++) {
@@ -44,9 +40,7 @@ const app = http.createServer(async (req, res) => {
                 if (elem.id == query.id) return true;
                 else return false;
             });
-            const bf = await fsPromises.readFile(
-                `${__dirname}/pages/view.html`
-            );
+            const bf = await fsPromises.readFile(`${__dirname}/pages/view.html`);
             let text = bf.toString();
             text = text.replace(
                 "$VIEW$",
@@ -58,6 +52,11 @@ const app = http.createServer(async (req, res) => {
                 </div>`
             );
             res.end(text);
+            break;
+        }
+        case "/homeStyles.css": {
+            const bf = await fsPromises.readFile("./pages/homeStyles.css");
+            res.end(bf);
             break;
         }
         default: {
