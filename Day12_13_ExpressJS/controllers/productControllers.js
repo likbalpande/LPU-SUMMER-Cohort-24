@@ -1,5 +1,17 @@
 const fsPromises = require("fs/promises");
 
+const validateForTitleAndPrice = (req, res, next) => {
+    const body = req.body;
+    if (!body.title || !body.price) {
+        res.json({
+            status: "fail",
+            message: "!! Title and Price is required",
+        });
+        return;
+    }
+    next();
+};
+
 const getData = async () => {
     const text = await fsPromises.readFile("./data.json", { encoding: "utf8" });
     let products;
@@ -23,13 +35,6 @@ const getProducts = async (req, res) => {
 
 const createProduct = async (req, res) => {
     const body = req.body;
-    if (!body.title || !body.price) {
-        res.json({
-            status: "fail",
-            message: "Title and Price is required",
-        });
-        return;
-    }
     const products = await getData();
     let lastId = 0;
     if (products.length != 0) {
@@ -51,13 +56,6 @@ const createProduct = async (req, res) => {
 const replaceProduct = async (req, res) => {
     const params = req.params;
     const body = req.body;
-    if (!body.title || !body.price) {
-        res.json({
-            status: "fail",
-            message: "Title and Price is required",
-        });
-        return;
-    }
     const products = await getData();
     const prIdx = products.findIndex((elem) => {
         if (elem.id == params.id) return true;
@@ -151,4 +149,5 @@ module.exports = {
     replaceProduct,
     deleteProduct,
     updateProduct,
+    validateForTitleAndPrice,
 };
