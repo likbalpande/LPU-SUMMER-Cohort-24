@@ -10,11 +10,8 @@ const {
 const app = express();
 app.use(express.json());
 
-app.get("/products", getProducts);
-app.post("/products", createProduct);
+app.route("/products").get(getProducts).post(createProduct);
 
-app.put("/products/:id", replaceProduct);
-app.delete("/products/:id", deleteProduct);
-app.patch("/products/:id", updateProduct);
+app.route("/products/:id").put(replaceProduct).patch(updateProduct).delete(deleteProduct);
 
 app.listen(1400);
