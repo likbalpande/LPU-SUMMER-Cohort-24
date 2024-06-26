@@ -15,16 +15,10 @@ const client = new MongoClient(dbURL, {
     },
 });
 
-async function run() {
-    try {
-        const database = client.db(process.env.DB_NAME);
-        const products = database.collection("products");
-        const res = await products.insertOne({
-            name: "Likhilesh",
-        });
-        console.log("--------------- DB connected ------------------", res);
-    } catch (err) {
-        console.log(err);
-    }
-}
-run();
+const database = client.db(process.env.DB_NAME);
+const productsCollection = database.collections("products");
+
+module.exports = {
+    database,
+    productsCollection,
+};
