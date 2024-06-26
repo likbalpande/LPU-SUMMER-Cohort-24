@@ -1,15 +1,12 @@
 require("dotenv").config();
-const { productsCollection } = require("./database/db.js");
-const { getProduct, createProduct } = require("./controllers/productControllers.js");
 
 const express = require("express");
+const productRouter = require("./routes/productRoutes.js");
 
 const app = express();
 app.use(express.json());
 
-app.get("/products", getProduct);
-
-app.post("/products", createProduct);
+app.use("/products", productRouter);
 
 app.listen(process.env.PORT, () => {
     console.log(`----------- App started on : ${process.env.PORT} -------------`);
