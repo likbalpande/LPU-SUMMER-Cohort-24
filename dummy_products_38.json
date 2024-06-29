@@ -1,0 +1,305 @@
+[
+    {
+        "title": "Wireless Bluetooth Over-Ear Headphones",
+        "price": 6999,
+        "thumbnail": "https://example.com/images/wireless-bluetooth-headphones-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/wireless-bluetooth-headphones-1.jpg",
+            "https://example.com/images/wireless-bluetooth-headphones-2.jpg"
+        ],
+        "description": "Experience superior sound quality with these over-ear headphones. The wireless Bluetooth connection ensures you have the freedom to move around. With noise-canceling technology, you can immerse yourself in your favorite music."
+    },
+    {
+        "title": "High-Speed USB-C Charging Cable",
+        "price": 1000,
+        "thumbnail": "https://example.com/images/usb-c-charging-cable-thumbnail.jpg",
+        "images": [],
+        "description": "This high-speed USB-C charging cable supports fast charging and data transfer. Its durable construction ensures long-lasting use. The cable is compatible with a wide range of devices."
+    },
+    {
+        "title": "Ergonomic Wireless Vertical Mouse",
+        "price": 2499,
+        "thumbnail": "https://example.com/images/ergonomic-vertical-mouse-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/ergonomic-vertical-mouse-1.jpg"
+        ],
+        "description": "Designed to reduce wrist strain, this ergonomic vertical mouse is perfect for long hours of use. The wireless design offers flexibility and convenience. It features customizable buttons for enhanced productivity."
+    },
+    {
+        "title": "Smart LED Desk Lamp with USB Charging",
+        "price": 3999,
+        "thumbnail": "https://example.com/images/smart-led-desk-lamp-thumbnail.jpg",
+        "images": [],
+        "description": "Illuminate your workspace with this smart LED desk lamp. It features adjustable brightness and color temperature settings. The built-in USB port allows you to charge your devices conveniently."
+    },
+    {
+        "title": "Portable External Hard Drive 2TB",
+        "price": 5400,
+        "thumbnail": "https://example.com/images/portable-external-hard-drive-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/portable-external-hard-drive-1.jpg"
+        ],
+        "description": "Store and backup your important files with this 2TB portable external hard drive. It offers fast data transfer speeds and is compatible with both Windows and Mac. The compact design makes it easy to carry around."
+    },
+    {
+        "title": "Adjustable Memory Foam Travel Pillow",
+        "price": 2000,
+        "thumbnail": "https://example.com/images/memory-foam-travel-pillow-thumbnail.jpg",
+        "images": [],
+        "description": "Travel in comfort with this adjustable memory foam travel pillow. It provides excellent neck support and is perfect for long journeys. The pillow is lightweight and comes with a convenient carrying case."
+    },
+    {
+        "title": "Compact Digital Air Fryer 3.5 Quart",
+        "price": 7999,
+        "thumbnail": "https://example.com/images/compact-digital-air-fryer-thumbnail.jpg",
+        "images": [],
+        "description": "Enjoy healthier meals with this compact digital air fryer. It uses hot air to cook food with little to no oil. The 3.5-quart capacity is perfect for small families or individuals."
+    },
+    {
+        "title": "Stainless Steel Insulated Water Bottle",
+        "price": 1500,
+        "thumbnail": "https://example.com/images/insulated-water-bottle-thumbnail.jpg",
+        "images": [],
+        "description": "Keep your drinks cold or hot for hours with this stainless steel insulated water bottle. It features a leak-proof design and a wide mouth for easy filling and cleaning. The bottle is available in multiple colors."
+    },
+    {
+        "title": "Wireless Multi-Device Charging Station",
+        "price": 4999,
+        "thumbnail": "https://example.com/images/wireless-charging-station-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/wireless-charging-station-1.jpg",
+            "https://example.com/images/wireless-charging-station-2.jpg"
+        ],
+        "description": "Charge all your devices at once with this wireless multi-device charging station. It supports fast charging and is compatible with most smartphones and smartwatches. The sleek design looks great on any desk or nightstand."
+    },
+    {
+        "title": "Bluetooth Car FM Transmitter with Dual USB Ports",
+        "price": 1999,
+        "thumbnail": "https://example.com/images/bluetooth-car-fm-transmitter-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/bluetooth-car-fm-transmitter-1.jpg"
+        ],
+        "description": "Enhance your driving experience with this Bluetooth car FM transmitter. It allows you to play music and take calls hands-free. The dual USB ports let you charge two devices simultaneously."
+    },
+    {
+        "title": "Electric Wine Opener with Foil Cutter",
+        "price": 2499,
+        "thumbnail": "https://example.com/images/electric-wine-opener-thumbnail.jpg",
+        "images": [],
+        "description": "Easily open your wine bottles with this electric wine opener. It comes with a foil cutter and can open up to 30 bottles on a single charge. The sleek design makes it a great addition to any kitchen or bar."
+    },
+    {
+        "title": "Cordless Handheld Vacuum Cleaner",
+        "price": 4500,
+        "thumbnail": "https://example.com/images/cordless-handheld-vacuum-thumbnail.jpg",
+        "images": [],
+        "description": "Keep your home clean with this cordless handheld vacuum cleaner. It's lightweight and powerful, making it easy to clean hard-to-reach areas. The vacuum comes with multiple attachments for different cleaning needs."
+    },
+    {
+        "title": "Stainless Steel Electric Kettle with Temperature Control",
+        "price": 3500,
+        "thumbnail": "https://example.com/images/electric-kettle-temperature-control-thumbnail.jpg",
+        "images": [],
+        "description": "Boil water quickly with this stainless steel electric kettle. It features temperature control settings for different types of tea and coffee. The kettle has a 1.7-liter capacity and an automatic shut-off feature for safety."
+    },
+    {
+        "title": "Portable Mini Projector with HDMI Input",
+        "price": 9900,
+        "thumbnail": "https://example.com/images/portable-mini-projector-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/portable-mini-projector-1.jpg"
+        ],
+        "description": "Enjoy movies and presentations anywhere with this portable mini projector. It has an HDMI input and supports Full HD resolution. The compact design makes it easy to carry and set up."
+    },
+    {
+        "title": "Smart Digital Bathroom Scale with App",
+        "price": 2999,
+        "thumbnail": "https://example.com/images/smart-digital-bathroom-scale-thumbnail.jpg",
+        "images": [],
+        "description": "Track your fitness progress with this smart digital bathroom scale. It syncs with an app to monitor weight, BMI, and other metrics. The scale has a sleek design and is made of durable materials."
+    },
+    {
+        "title": "Wireless Noise-Canceling Earbuds with Charging Case",
+        "price": 7999,
+        "thumbnail": "https://example.com/images/noise-canceling-earbuds-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/noise-canceling-earbuds-1.jpg",
+            "https://example.com/images/noise-canceling-earbuds-2.jpg"
+        ],
+        "description": "Immerse yourself in music with these wireless noise-canceling earbuds. They come with a compact charging case that provides additional battery life. The earbuds are comfortable and have touch controls for easy operation."
+    },
+    {
+        "title": "Smart Wi-Fi LED Light Bulb",
+        "price": 999,
+        "thumbnail": "https://example.com/images/smart-wifi-led-light-bulb-thumbnail.jpg",
+        "images": [],
+        "description": "Control your lighting from anywhere with this smart Wi-Fi LED light bulb. It can change colors and adjust brightness. The bulb is compatible with voice assistants like Alexa and Google Assistant."
+    },
+    {
+        "title": "Foldable Bluetooth Keyboard with Touchpad",
+        "price": 2999,
+        "thumbnail": "https://example.com/images/foldable-bluetooth-keyboard-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/foldable-bluetooth-keyboard-1.jpg"
+        ],
+        "description": "Work on the go with this foldable Bluetooth keyboard. It features a built-in touchpad for convenient navigation. The keyboard is lightweight and fits easily into a bag or backpack."
+    },
+    {
+        "title": "Rechargeable Electric Toothbrush with Travel Case",
+        "price": 2499,
+        "thumbnail": "https://example.com/images/rechargeable-electric-toothbrush-thumbnail.jpg",
+        "images": [],
+        "description": "Keep your teeth clean with this rechargeable electric toothbrush. It comes with multiple brush heads and a travel case. The toothbrush has different modes for various cleaning needs."
+    },
+    {
+        "title": "Wireless Charging Mouse Pad with USB Ports",
+        "price": 2599,
+        "thumbnail": "https://example.com/images/wireless-charging-mouse-pad-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/wireless-charging-mouse-pad-1.jpg"
+        ],
+        "description": "Keep your workspace organized with this wireless charging mouse pad. It includes USB ports for added convenience. The sleek design fits perfectly on any desk."
+    },
+    {
+        "title": "Portable Handheld Fan with USB Rechargeable Battery",
+        "price": 999,
+        "thumbnail": "https://example.com/images/portable-handheld-fan-thumbnail.jpg",
+        "images": [],
+        "description": "Stay cool on the go with this portable handheld fan. It features a USB rechargeable battery and three-speed settings. The compact design makes it easy to carry."
+    },
+    {
+        "title": "Electric Ceramic Space Heater with Adjustable Thermostat",
+        "price": 3999,
+        "thumbnail": "https://example.com/images/electric-ceramic-space-heater-thumbnail.jpg",
+        "images": [],
+        "description": "Warm up any room with this electric ceramic space heater. It has an adjustable thermostat and multiple heat settings. The compact size is perfect for small spaces."
+    },
+    {
+        "title": "Smart Home Security Camera with Motion Detection",
+        "price": 5999,
+        "thumbnail": "https://example.com/images/smart-home-security-camera-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/smart-home-security-camera-1.jpg"
+        ],
+        "description": "Monitor your home with this smart security camera. It features motion detection and night vision. The camera can be controlled via a mobile app for added convenience."
+    },
+    {
+        "title": "Bluetooth Sleep Headphones with Eye Mask",
+        "price": 2999,
+        "thumbnail": "https://example.com/images/bluetooth-sleep-headphones-thumbnail.jpg",
+        "images": [],
+        "description": "Enjoy your music and sleep comfortably with these Bluetooth sleep headphones. They come with a built-in eye mask for complete darkness. The headphones are perfect for travel and home use."
+    },
+    {
+        "title": "Electric Coffee Grinder with Stainless Steel Blades",
+        "price": 1999,
+        "thumbnail": "https://example.com/images/electric-coffee-grinder-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/electric-coffee-grinder-1.jpg"
+        ],
+        "description": "Grind your coffee beans to perfection with this electric coffee grinder. It features stainless steel blades for a consistent grind. The compact design makes it easy to store."
+    },
+    {
+        "title": "Waterproof Bluetooth Shower Speaker",
+        "price": 1499,
+        "thumbnail": "https://example.com/images/waterproof-bluetooth-shower-speaker-thumbnail.jpg",
+        "images": [],
+        "description": "Listen to your favorite tunes while showering with this waterproof Bluetooth speaker. It has a strong suction cup for easy attachment to your shower wall. The speaker is compatible with most Bluetooth devices."
+    },
+    {
+        "title": "Smart Electric Toothbrush with Pressure Sensor",
+        "price": 2999,
+        "thumbnail": "https://example.com/images/smart-electric-toothbrush-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/smart-electric-toothbrush-1.jpg"
+        ],
+        "description": "Keep your teeth clean and healthy with this smart electric toothbrush. It features a pressure sensor to protect your gums and multiple brushing modes. The toothbrush comes with a rechargeable battery and a travel case."
+    },
+    {
+        "title": "Noise-Canceling Bluetooth Headphones with Mic",
+        "price": 5999,
+        "thumbnail": "https://example.com/images/noise-canceling-headphones-thumbnail.jpg",
+        "images": [],
+        "description": "Immerse yourself in music with these noise-canceling Bluetooth headphones. They feature a built-in mic for hands-free calls and long battery life. The headphones are comfortable to wear for extended periods."
+    },
+    {
+        "title": "Smart Plug with Energy Monitoring",
+        "price": 1999,
+        "thumbnail": "https://example.com/images/smart-plug-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/smart-plug-1.jpg"
+        ],
+        "description": "Control your appliances from anywhere with this smart plug. It features energy monitoring to track your power usage. The plug is compatible with voice assistants like Alexa and Google Assistant."
+    },
+    {
+        "title": "Adjustable Laptop Stand with Cooling Fans",
+        "price": 2999,
+        "thumbnail": "https://example.com/images/adjustable-laptop-stand-thumbnail.jpg",
+        "images": [],
+        "description": "Improve your posture and keep your laptop cool with this adjustable laptop stand. It features built-in cooling fans and multiple height settings. The stand is lightweight and portable."
+    },
+    {
+        "title": "Portable Electric Hand Warmer and Power Bank",
+        "price": 1499,
+        "thumbnail": "https://example.com/images/electric-hand-warmer-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/electric-hand-warmer-1.jpg"
+        ],
+        "description": "Stay warm on cold days with this portable electric hand warmer. It doubles as a power bank to charge your devices. The compact design makes it easy to carry in your pocket or bag."
+    },
+    {
+        "title": "Electric Milk Frother for Lattes and Cappuccinos",
+        "price": 1999,
+        "thumbnail": "https://example.com/images/electric-milk-frother-thumbnail.jpg",
+        "images": [],
+        "description": "Create creamy froth for your lattes and cappuccinos with this electric milk frother. It has multiple settings for different types of froth. The frother is easy to clean and store."
+    },
+    {
+        "title": "Rechargeable LED Camping Lantern with Power Bank",
+        "price": 2999,
+        "thumbnail": "https://example.com/images/rechargeable-camping-lantern-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/rechargeable-camping-lantern-1.jpg"
+        ],
+        "description": "Light up your campsite with this rechargeable LED camping lantern. It also functions as a power bank to charge your devices. The lantern is durable and water-resistant, making it perfect for outdoor use."
+    },
+    {
+        "title": "Wireless Bluetooth Keyboard and Mouse Combo",
+        "price": 2499,
+        "thumbnail": "https://example.com/images/wireless-keyboard-mouse-combo-thumbnail.jpg",
+        "images": [],
+        "description": "Upgrade your workspace with this wireless Bluetooth keyboard and mouse combo. The keyboard has a sleek design with comfortable keys. The mouse is ergonomic and provides smooth tracking."
+    },
+    {
+        "title": "Smart Body Fat Scale with Bluetooth",
+        "price": 3499,
+        "thumbnail": "https://example.com/images/smart-body-fat-scale-thumbnail.jpg",
+        "images": [],
+        "description": "Monitor your body composition with this smart body fat scale. It syncs with a mobile app to track your weight, body fat, and other metrics. The scale is made of durable tempered glass and has a sleek design."
+    },
+    {
+        "title": "Portable Solar Charger with Dual USB Ports",
+        "price": 2999,
+        "thumbnail": "https://example.com/images/portable-solar-charger-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/portable-solar-charger-1.jpg"
+        ],
+        "description": "Keep your devices charged on the go with this portable solar charger. It features dual USB ports and a durable design. The charger is perfect for outdoor activities and emergencies."
+    },
+    {
+        "title": "Electric Pressure Cooker with Multiple Functions",
+        "price": 5000,
+        "thumbnail": "https://example.com/images/electric-pressure-cooker-thumbnail.jpg",
+        "images": [],
+        "description": "Cook your meals quickly and efficiently with this electric pressure cooker. It has multiple functions, including slow cooking, steaming, and sautéing. The cooker is easy to use and clean."
+    },
+    {
+        "title": "Smart Wi-Fi Air Purifier with HEPA Filter",
+        "price": 7999,
+        "thumbnail": "https://example.com/images/smart-wifi-air-purifier-thumbnail.jpg",
+        "images": [
+            "https://example.com/images/smart-wifi-air-purifier-1.jpg"
+        ],
+        "description": "Breathe cleaner air with this smart Wi-Fi air purifier. It features a HEPA filter to remove allergens and pollutants. The purifier can be controlled via a mobile app for added convenience."
+    }
+]

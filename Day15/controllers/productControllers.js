@@ -132,15 +132,42 @@ const deleteProduct = async (req, res) => {
     }
 };
 
+// const pizzasQuery = productModel.find({
+//     title: {
+//         $regex: q,
+//     },
+// });
+
+// query from client --> price[$lte]=2499
+// query at server --> { price: { '$lte': '2499' } }
+
 const listProducts = async (req, res) => {
-    const { limit = 10, ...filters } = req.query;
-    const pizzasQuery = productModel.find(filters);
-    const limitedPizzas = await pizzasQuery.limit(limit);
+    const { limit = 10, q = "", fields = "", sort = "", page = 1, ...filters } = req.query;
+    const selectionFields = fields.split("_").join(" ");
+    const sortFields = sort.split("_").join(" ");
+    let productsQuery = productModel.find(filters);
+    // searching functionality
+    productsQuery = productsQuery.where("title").regex(q);
+    // reduce response size and select specific fields
+    productsQuery = productsQuery.select(selectionFields);
+
+    // count the total of result documents
+    const countQuery = productsQuery.clone();
+    const totalData = await countQuery.countDocuments();
+
+    // sorting
+    productsQuery = productsQuery.sort(sortFields);
+
+    // pagination
+    productsQuery = productsQuery.skip((page - 1) * limit);
+    productsQuery = await productsQuery.limit(limit);
 
     res.json({
         status: "success",
+        results: productsQuery.length,
+        totalData: totalData,
         data: {
-            pizzas: limitedPizzas,
+            pizzas: productsQuery,
         },
     });
 };
