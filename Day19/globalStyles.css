@@ -34,3 +34,42 @@
         flex-grow: 1;
     }
 }
+
+.homepage-category-bar{
+    background-color: #222F3E;
+    padding: 10px 16px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    button{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 16px;
+        background-color: transparent;
+        padding: 4px 8px;
+        color: white;
+        border: none;
+    }
+}
+
+.homepage-category-bar>.category-items{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: white;
+      padding: 0 12px;
+}
+
+.homepage-body>.carousal-image{
+    width: 100%;
+}
+
+.homepage-body>.products-cards-container{
+    background-color: aqua;
+    margin: 0 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
