@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.homepage-root-container{
+    background-color: yellow;
+}
+
+.homepage-nav{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #131921;
+    color: #fff;
+}
+
+.homepage-nav>h4{
+    width: 76px;
+}
+.homepage-nav>p{
+    width: 80px;
+    font-size: 12px;
+}
+.homepage-search-container{
+    flex-grow: 1;
+    height: 30px;
+    background-color: red;
+    display: flex;
+
+    input{
+        flex-grow: 1;
+    }
+}
