@@ -1,35 +1,27 @@
 import { useState } from "react";
+import CategoryBar from "../components/categoryBar";
+import Navbar from "../components/navbar";
 
 const SearchPage = (props) => {
-    // let searchText = "";
+    const { categories } = props;
     const [searchText, setSearchText] = useState("");
-    console.log("initially: ", searchText);
+    const [products, setProducts] = useState([]);
 
     const handleSearch = (e) => {
         const val = e.target.value;
-        // searchText = val;
         setSearchText(val);
     };
 
-    const [products, setProducts] = useState([]);
-    async function getData() {
-        const res = await fetch("https://dummyjson.com/products");
-        const data = await res.json();
-        setProducts(data.products);
-    }
-
     return (
-        <div>
+        <>
+            <Navbar setProducts={setProducts} />
+            <CategoryBar categories={categories} />
             <div>
-                <input type="text" onChange={handleSearch} />
+                {products.map((elem) => {
+                    return <p key={elem.id}>{elem.title}</p>;
+                })}
             </div>
-            <h1>The search Text is : {searchText}</h1>
-            <hr />
-            <button onClick={getData}>Get Data</button>
-            {products.map((elem) => {
-                return <p>{elem.title}</p>;
-            })}
-        </div>
+        </>
     );
 };
 
