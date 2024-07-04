@@ -7,14 +7,17 @@ const SearchPage = (props) => {
     const [searchText, setSearchText] = useState("");
     const [products, setProducts] = useState([]);
 
-    const handleSearch = (e) => {
+    async function getData(e) {
         const val = e.target.value;
-        setSearchText(val);
-    };
+        const res = await fetch(`https://dummyjson.com/products/search?q=${val}`);
+        const data = await res.json();
+        setProducts(data.products);
+        console.log("API! Called");
+    }
 
     return (
         <>
-            <Navbar setProducts={setProducts} />
+            <Navbar setSearchText={setSearchText} />
             <CategoryBar categories={categories} />
             <div>
                 {products.map((elem) => {
