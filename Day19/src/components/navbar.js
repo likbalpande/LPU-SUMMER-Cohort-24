@@ -1,13 +1,9 @@
 import { IoSearchSharp } from "react-icons/io5";
 
-const Navbar = ({ setProducts }) => {
-    async function getData(e) {
-        const val = e.target.value;
-        const res = await fetch(`https://dummyjson.com/products/search?q=${val}`);
-        const data = await res.json();
-        setProducts(data.products);
-        console.log("API! Called");
-    }
+const Navbar = ({ setSearchText }) => {
+    const handleSearch = (e) => {
+        setSearchText(e.target.value);
+    };
 
     return (
         <nav className="homepage-nav">
@@ -19,7 +15,7 @@ const Navbar = ({ setProducts }) => {
             </p>
             <div className="homepage-search-container">
                 <select />
-                <input type="text" onChange={getData} />
+                <input type="text" onChange={handleSearch} />
                 <button>
                     <IoSearchSharp />
                 </button>
