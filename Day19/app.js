@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import "./globalStyles.css";
 import HomePage from "./src/Pages/homePage";
 import SearchPage from "./src/pages/amazonSearchPage";
+import Revision from "./src/pages/revision";
 
 const parent = document.getElementById("root");
 const root = ReactDOM.createRoot(parent);
@@ -116,7 +117,8 @@ const App = () => {
                 productInfoCards={productInfoCards} 
                 categories={categories}
             /> */}
-            <SearchPage categories={categories} />
+            {/* <SearchPage categories={categories} /> */}
+            <Revision />
         </div>
     );
 };
