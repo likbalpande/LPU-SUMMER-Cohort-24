@@ -1,8 +1,9 @@
 import ReactDOM from "react-dom/client";
 import "./globalStyles.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./src/Pages/homePage";
 import SearchPage from "./src/pages/amazonSearchPage";
-import Revision from "./src/pages/revision";
+import { useState } from "react";
 
 const parent = document.getElementById("root");
 const root = ReactDOM.createRoot(parent);
@@ -111,16 +112,26 @@ const categories = [
 ];
 
 const App = () => {
-    return (
-        <div>
-            {/* <HomePage 
-                productInfoCards={productInfoCards} 
-                categories={categories}
-            /> */}
-            {/* <SearchPage categories={categories} /> */}
-            <Revision />
-        </div>
-    );
+    const [searchText, setSearchText] = useState("");
+
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: (
+                <HomePage
+                    searchText={searchText}
+                    setSearchText={setSearchText}
+                    productInfoCards={productInfoCards}
+                    categories={categories}
+                />
+            ),
+        },
+        {
+            path: "/search",
+            element: <SearchPage searchText={searchText} setSearchText={setSearchText} categories={categories} />,
+        },
+    ]);
+    return <RouterProvider router={router} />;
 };
 
 root.render(<App />);

@@ -1,19 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CategoryBar from "../components/categoryBar";
 import Navbar from "../components/navbar";
 
 const SearchPage = (props) => {
-    const { categories } = props;
-    const [searchText, setSearchText] = useState("");
+    const { categories, searchText, setSearchText } = props;
     const [products, setProducts] = useState([]);
 
-    async function getData(e) {
-        const val = e.target.value;
-        const res = await fetch(`https://dummyjson.com/products/search?q=${val}`);
+    async function getData() {
+        const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
         const data = await res.json();
         setProducts(data.products);
-        console.log("API! Called");
     }
+
+    useEffect(() => {
+        getData();
+    }, [searchText]);
 
     return (
         <>
