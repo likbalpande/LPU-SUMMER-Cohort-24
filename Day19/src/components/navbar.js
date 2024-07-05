@@ -1,6 +1,6 @@
 import { IoSearchSharp } from "react-icons/io5";
 
-const Navbar = ({ setSearchText }) => {
+const Navbar = ({ setSearchText, openSearchPage }) => {
     const handleSearch = (e) => {
         setSearchText(e.target.value);
     };
@@ -16,7 +16,7 @@ const Navbar = ({ setSearchText }) => {
             <div className="homepage-search-container">
                 <select />
                 <input type="text" onChange={handleSearch} />
-                <button>
+                <button onClick={openSearchPage}>
                     <IoSearchSharp />
                 </button>
             </div>

@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./src/Pages/homePage";
 import SearchPage from "./src/pages/amazonSearchPage";
 import { useState } from "react";
+import ProductInfo from "./src/pages/productInfo";
 
 const parent = document.getElementById("root");
 const root = ReactDOM.createRoot(parent);
@@ -129,6 +130,10 @@ const App = () => {
         {
             path: "/search",
             element: <SearchPage searchText={searchText} setSearchText={setSearchText} categories={categories} />,
+        },
+        {
+            path: "/search/:id",
+            element: <ProductInfo />,
         },
     ]);
     return <RouterProvider router={router} />;
