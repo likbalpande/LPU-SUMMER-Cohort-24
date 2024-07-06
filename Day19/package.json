@@ -2,7 +2,6 @@
   "name": "day19",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
   "scripts": {
     "start": "rm -r .parcel-cache && parcel index.html"
   },
