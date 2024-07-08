@@ -1,20 +1,10 @@
-import { useEffect, useState } from "react";
 import CategoryBar from "../components/categoryBar";
 import Navbar from "../components/navbar";
+import useGetProducts from "../hooks/useGetProducts";
 
 const SearchPage = (props) => {
     const { categories, searchText, setSearchText } = props;
-    const [products, setProducts] = useState([]);
-
-    async function getData() {
-        const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
-        const data = await res.json();
-        setProducts(data.products);
-    }
-
-    useEffect(() => {
-        getData();
-    }, [searchText]);
+    const products = useGetProducts(searchText);
 
     return (
         <>
