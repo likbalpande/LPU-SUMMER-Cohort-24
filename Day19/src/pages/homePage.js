@@ -9,9 +9,11 @@ import useGetProducts from "../hooks/useGetProducts";
 const HomePage = (props) => {
     const { productInfoCards, categories, setSearchText } = props;
     const navigate = useNavigate();
+    const openSearchPage = () => {
+        navigate("/search");
+    };
 
     const products = useGetProducts();
-
     let cnt = 0;
     const reqLength = 16;
     const filteredProducts = products.filter((elem, idx) => {
@@ -22,15 +24,7 @@ const HomePage = (props) => {
             } else return false;
         } else return false;
     });
-
-    console.log("\n✅ : filteredProducts:", filteredProducts);
-
-    const openSearchPage = () => {
-        navigate("/search");
-    };
-
-    const dummy = [1, 2, 3, 4];
-
+    const dummy = [0, 1, 2, 3]; // [...Array(4).keys()]
     return (
         <div className="homepage-root-container">
             <Navbar setSearchText={setSearchText} openSearchPage={openSearchPage} />
