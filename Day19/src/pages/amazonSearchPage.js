@@ -3,12 +3,12 @@ import Navbar from "../components/navbar";
 import useGetProducts from "../hooks/useGetProducts";
 
 const SearchPage = (props) => {
-    const { categories, searchText, setSearchText } = props;
-    const products = useGetProducts(searchText);
+    const { categories } = props;
+    const products = useGetProducts();
 
     return (
         <>
-            <Navbar setSearchText={setSearchText} />
+            <Navbar />
             <CategoryBar categories={categories} />
             <div>
                 {products.map((elem) => {

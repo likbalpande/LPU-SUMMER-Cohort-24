@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { IoSearchSharp } from "react-icons/io5";
+import AppContext from "../context/appContext";
 
-const Navbar = ({ setSearchText, openSearchPage }) => {
+const Navbar = ({ openSearchPage }) => {
+    const { setSearchText } = useContext(AppContext);
     const handleSearch = (e) => {
         setSearchText(e.target.value);
     };
