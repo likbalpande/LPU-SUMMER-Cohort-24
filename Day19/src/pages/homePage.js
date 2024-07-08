@@ -36,7 +36,7 @@ const HomePage = (props) => {
                 />
                 <div className="products-cards-container">
                     {dummy.map((elem) => {
-                        return <ProductInfoCard data={filteredProducts.slice(elem * 4, elem * 4 + 4)} />;
+                        return <ProductInfoCard key={elem} data={filteredProducts.slice(elem * 4, elem * 4 + 4)} />;
                     })}
                 </div>
             </div>
