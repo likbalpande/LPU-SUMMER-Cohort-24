@@ -12,11 +12,24 @@ const HomePage = (props) => {
 
     const products = useGetProducts();
 
-    console.log("\n✅ : products:", products);
+    let cnt = 0;
+    const reqLength = 16;
+    const filteredProducts = products.filter((elem, idx) => {
+        if (Math.random() >= 0.5 || reqLength - cnt === products.length - idx) {
+            if (cnt < reqLength) {
+                cnt++;
+                return true;
+            } else return false;
+        } else return false;
+    });
+
+    console.log("\n✅ : filteredProducts:", filteredProducts);
 
     const openSearchPage = () => {
         navigate("/search");
     };
+
+    const dummy = [1, 2, 3, 4];
 
     return (
         <div className="homepage-root-container">
@@ -28,8 +41,8 @@ const HomePage = (props) => {
                     className="carousal-image"
                 />
                 <div className="products-cards-container">
-                    {productInfoCards.map((elem) => {
-                        return <ProductInfoCard data={elem} />;
+                    {dummy.map((elem) => {
+                        return <ProductInfoCard data={filteredProducts.slice(elem * 4, elem * 4 + 4)} />;
                     })}
                 </div>
             </div>

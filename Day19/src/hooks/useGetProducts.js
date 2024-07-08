@@ -4,9 +4,13 @@ const useGetProducts = (searchText = "") => {
     const [products, setProducts] = useState([]);
 
     async function getData() {
-        const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
-        const data = await res.json();
-        setProducts(data.products);
+        try {
+            const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
+            const data = await res.json();
+            setProducts(data.products);
+        } catch (e) {
+            alert(JSON.stringify(e));
+        }
     }
 
     useEffect(() => {
