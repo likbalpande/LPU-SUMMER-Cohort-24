@@ -60,10 +60,19 @@ procedure:
         (the model is pending)
         --> get the body and verify if the body is coming or not
         
+    ((for debugging use NETWORK Terminal in Developer tools))
 
+    10. inside userModel.js
+        --> create a model
+            --> email, password, name, createdAt, updatedAt
+    
+    11. inside authController.js --> signUp function
+        --> for new email --> create a new user and return the id with proper format
+            --> {status: 'success', message: 'User created", data: { user: user }}
+        --> if email already exists --> send error in proper format
+            --> status: 400, and json with status fail and message : 'User already exists'
 
-
-
+    12. Make proper UI for Login and SingUp Pages (both page should be separate)
 
 
 
