@@ -3,6 +3,7 @@ import "./globalStyles.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./src/pages/homePage";
 import SearchPage from "./src/pages/amazonSearchPage";
+import SignUp from "./src/pages/signUp";
 import { useState } from "react";
 import ProductInfo from "./src/pages/productInfo";
 import AppContext from "./src/context/appContext";
@@ -37,6 +38,10 @@ const App = () => {
         {
             path: "/search/:id",
             element: <ProductInfo />,
+        },
+        {
+            path: "/signup",
+            element: <SignUp />,
         },
     ]);
 
