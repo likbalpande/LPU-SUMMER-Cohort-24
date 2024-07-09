@@ -40,12 +40,39 @@ const App = () => {
         },
     ]);
 
+    const [cart, setCart] = useState([]);
+    const addToCart = (elem) => {
+        console.log(elem);
+        const isPresent = cart.findIndex((cI) => cI.id === elem.id);
+        if (isPresent === -1) {
+            const newCart = [...cart];
+            newCart.push({
+                title: elem.title,
+                id: elem.id,
+                price: elem.price,
+                count: 1,
+            });
+            setCart(newCart);
+        } else {
+            const newCart = cart.map((cartItem) => {
+                if (cartItem.id === elem.id) {
+                    const newCartItem = { ...cartItem };
+                    newCartItem.count = newCartItem.count + 1;
+                    return newCartItem;
+                } else return cartItem;
+            });
+            setCart(newCart);
+        }
+    };
+
     const contextValues = {
+        cart,
+        addToCart,
         categories,
         searchText,
         setSearchText,
     };
-
+    console.log(cart);
     return (
         <AppContext.Provider value={contextValues}>
             <RouterProvider router={router} />;

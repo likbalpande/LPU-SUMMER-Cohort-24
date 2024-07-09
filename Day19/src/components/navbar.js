@@ -3,7 +3,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import AppContext from "../context/appContext";
 
 const Navbar = ({ openSearchPage }) => {
-    const { setSearchText } = useContext(AppContext);
+    const { setSearchText, cart } = useContext(AppContext);
     const handleSearch = (e) => {
         setSearchText(e.target.value);
     };
@@ -24,7 +24,7 @@ const Navbar = ({ openSearchPage }) => {
                 </button>
             </div>
             <h5>Profile</h5>
-            <h5>Cart</h5>
+            <h5 title={JSON.stringify(cart)}>Cart</h5>
         </nav>
     );
 };

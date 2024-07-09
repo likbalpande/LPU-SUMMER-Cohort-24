@@ -10,7 +10,8 @@ const HomePage = () => {
         navigate("/search");
     };
 
-    const products = useGetProducts();
+    const products = useGetProducts({ isSearchTextDependent: false });
+
     let cnt = 0;
     const reqLength = 16;
     const filteredProducts = products.filter((elem, idx) => {
