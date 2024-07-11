@@ -26,31 +26,32 @@ const categories = [
 
 const App = () => {
     const [searchText, setSearchText] = useState("");
+    const [cart, setCart] = useState([]);
+    const [loggedInUser, setLoggedInUser] = useState(null);
 
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <HomePage />,
+            element: !loggedInUser ? <SignUp /> : <HomePage />,
         },
         {
             path: "/search",
-            element: <SearchPage />,
+            element: !loggedInUser ? <SignUp /> : <SearchPage />,
         },
         {
             path: "/search/:id",
-            element: <ProductInfo />,
+            element: !loggedInUser ? <SignUp /> : <ProductInfo />,
         },
         {
             path: "/signup",
-            element: <SignUp />,
+            element: loggedInUser ? <HomePage /> : <SignUp />,
         },
         {
             path: "/login",
-            element: <Login />,
+            element: loggedInUser ? <HomePage /> : <Login />,
         },
     ]);
 
-    const [cart, setCart] = useState([]);
     const addToCart = (elem) => {
         console.log(elem);
         const isPresent = cart.findIndex((cI) => cI.id === elem.id);
@@ -75,14 +76,20 @@ const App = () => {
         }
     };
 
+    const appLogin = (user) => {
+        setLoggedInUser(user);
+    };
+
     const contextValues = {
+        loggedInUser,
         cart,
         addToCart,
         categories,
         searchText,
         setSearchText,
+        appLogin,
     };
-    console.log(cart);
+    console.log("State", loggedInUser);
     return (
         <AppContext.Provider value={contextValues}>
             <RouterProvider router={router} />;

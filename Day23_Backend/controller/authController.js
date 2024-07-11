@@ -1,10 +1,30 @@
 const UserModel = require("../model/userModel");
+const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
-// const findExistingUserUsingEmail = async (email) => {
-//     const user = await UserModel.findOne({ email });
-//     return user;
-// };
+const findExistingUserByEmail = async (email) => {
+    const user = await UserModel.findOne({ email });
+    return user;
+};
+
+const verifyPassword = async (plainPassword, hashedPassword) => {
+    const isMatch = await bcrypt.compare(plainPassword, hashedPassword);
+    return isMatch;
+};
+
+const generateJWTToken = (user) => {
+    const token = jwt.sign(
+        {
+            exp: 120, // seconds
+            data: {
+                userId: user._id,
+                email: user.email,
+            },
+        },
+        process.env.JWT_SECRET_KEY
+    );
+    return token;
+};
 
 const signUp = async (req, res) => {
     try {
@@ -50,8 +70,58 @@ const signUp = async (req, res) => {
     }
 };
 
-const login = async (req, res) => {};
+const login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        if (!email || !password) {
+            res.status(400);
+            res.json({
+                status: "fail",
+                message: "Invalid email or password",
+            });
+            return;
+        }
+
+        const user = await findExistingUserByEmail(email);
+
+        if (!user) {
+            res.status(400).json({
+                status: "fail",
+                message: "User not found",
+            });
+            return;
+        }
+
+        const hashedPassword = user.password;
+        const isPasswordCorrect = await verifyPassword(password, hashedPassword);
+        if (!isPasswordCorrect) {
+            res.status(400).json({
+                status: "fail",
+                message: "Incorrect Password",
+            });
+            return;
+        }
+
+        res.status(200).json({
+            status: "success",
+            message: "User logged in",
+            data: {
+                user: {
+                    name: user.name,
+                    email: user.email,
+                },
+                token: generateJWTToken(user),
+            },
+        });
+    } catch (err) {
+        res.status(500).json({
+            status: "fail",
+            message: "Internal Server Error",
+        });
+    }
+};
 
 module.exports = {
     signUp,
+    login,
 };
