@@ -4,7 +4,7 @@
   "description": "initialize:     npm init",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx nodemon main.js"
   },
   "author": "",
   "license": "ISC",

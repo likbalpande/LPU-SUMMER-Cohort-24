@@ -1,8 +1,8 @@
-const useSignUp = () => {
-    const signUp = async ({ email, password }) => {
-        console.log("--signup called --");
+const useLogin = () => {
+    const login = async ({ email, password }) => {
+        console.log("--login called --");
 
-        const URL = "http://localhost:1400/api/v1/auth/signup";
+        const URL = "http://localhost:1400/api/v1/auth/login";
         const OPTIONS = {
             method: "POST",
             headers: {
@@ -20,7 +20,7 @@ const useSignUp = () => {
         console.log(data);
     };
 
-    return { signUp };
+    return { login };
 };
 
-export default useSignUp;
+export default useLogin;
