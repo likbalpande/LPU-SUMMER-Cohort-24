@@ -1,3 +1,6 @@
+import { useState } from "react";
+import useLogin from "../hooks/useLogin";
+
 const LoginPage = () => {
     const loginPageStyles = {
         display: "flex",
@@ -8,11 +11,24 @@ const LoginPage = () => {
         margin: "auto",
         padding: "24px",
     };
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const { login } = useLogin();
+
+    const handleSubmit = () => {
+        const validation = true;
+        if (validation) {
+            login({ email, password });
+        } else {
+            alert("Validation Failed");
+        }
+    };
+
     return (
         <div style={loginPageStyles}>
-            <input type="text" />
-            <input type="password" />
-            <button>Login</button>
+            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <button onClick={handleSubmit}>login</button>
         </div>
     );
 };

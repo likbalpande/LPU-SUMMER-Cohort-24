@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-const useSignup = () => {
+const useLogin = () => {
     const navigate = useNavigate();
 
-    const signup = async ({ email, password }) => {
+    const login = async ({ email, password }) => {
         try {
-            const res = await fetch(`${process.env.BACKEND_URL}/api/v1/auth/signup`, {
+            const res = await fetch(`${process.env.BACKEND_URL}/api/v1/auth/login`, {
                 method: "POST",
                 body: JSON.stringify({ email, password }),
                 headers: {
@@ -15,15 +15,15 @@ const useSignup = () => {
             const data = await res.json();
             console.log(data);
             if (data.status === "success") {
-                navigate(`/login?email=${email}`);
+                navigate(`/`);
             } else {
                 alert(data.message);
             }
         } catch (err) {
-            alert("Signup error: " + err.message);
+            alert("Login error: " + err.message);
         }
     };
-    return { signup };
+    return { login };
 };
 
-export default useSignup;
+export default useLogin;

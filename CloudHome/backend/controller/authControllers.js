@@ -90,13 +90,10 @@ const login = async (req, res) => {
         }
 
         const isCorrect = await user.verifyPassword(password, user.password);
-
-        console.log("\n✅ : isCorrect:", isCorrect);
-
         if (!isCorrect) {
             res.status(400).json({
                 status: "fail",
-                message: "Invalid password",
+                message: "Incorrect password",
                 data: {},
             });
             return;
