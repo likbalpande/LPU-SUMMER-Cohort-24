@@ -7,7 +7,7 @@ to install:
 folder structure:
     |- main.js
     |- .env
-    router
+    routes
         | - authRoutes.js
     controller
         | - authControllers.js
