@@ -3,11 +3,12 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import appStore from "./src/store/appStore";
 import AppRouter from "./appRouter";
+import "./globalStyles.css";
 
 const App = () => {
     return (
         <Provider store={appStore}>
-            <AppRouter />;
+            <AppRouter />
         </Provider>
     );
 };
