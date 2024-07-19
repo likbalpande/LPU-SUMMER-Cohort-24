@@ -1,0 +1,11 @@
+.navbar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    background-color: bisque;
+}
+
+button{
+    background-color: brown;
+}

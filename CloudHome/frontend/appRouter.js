@@ -3,6 +3,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 import LoginPage from "./src/pages/loginPage";
 import SignupPage from "./src/pages/signupPage";
 import { useSelector } from "react-redux";
+import HomePage from "./src/pages/homePage";
 
 const AppRouter = () => {
     const { isAuthorized } = useSelector((e) => e.auth);
@@ -18,7 +19,7 @@ const AppRouter = () => {
         },
         {
             path: "/",
-            element: isAuthorized ? <h1>Home Page</h1> : <Navigate to="/login" />,
+            element: isAuthorized ? <HomePage /> : <Navigate to="/login" />,
         },
     ]);
 
