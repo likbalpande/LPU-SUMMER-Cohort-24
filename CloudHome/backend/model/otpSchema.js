@@ -5,7 +5,7 @@ const { ObjectId } = mongoose.Schema.Types;
 
 const otpSchema = new mongoose.Schema({
     otp: {
-        type: Number,
+        type: String,
         required: true,
     },
     email: {

@@ -30,7 +30,8 @@ const verifyToken = (req, res, next) => {
                 data: {},
             });
         } else {
-            req.user = { email: decoded.data.email };
+            console.log(decoded);
+            req.user = { email: decoded.data.email, _id: decoded.data._id };
             next();
         }
     });

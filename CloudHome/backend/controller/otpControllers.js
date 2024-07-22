@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const OtpModel = require("../model/otpSchema");
 
 const sendOTPMail = async (email, otp) => {
     try {
@@ -7,8 +8,8 @@ const sendOTPMail = async (email, otp) => {
             secure: true,
             port: 465,
             auth: {
-                user: "lik.cogo.1@gmail.com",
-                pass: "tduekibieryjjgrh",
+                user: process.env.NODEMAILER_MAIL_USER,
+                pass: process.env.NODEMAILER_MAIL_PASS,
             },
         });
 
@@ -40,11 +41,32 @@ const sendOTPMail = async (email, otp) => {
 
 const generateOtp = async (req, res) => {
     try {
-        const { email } = req.user;
+        const { email, _id } = req.user;
 
-        // generate Random OTP
+        const sentOPTMail = await OtpModel.findOne({
+            email,
+            expiresAt: {
+                $gte: Date.now(),
+            },
+        });
 
-        const isMailSent = await sendOTPMail("likhilesh@programmingpathshala.com", 1200);
+        if (sentOPTMail) {
+            res.status(200);
+            res.json({
+                status: "success",
+                message: `Otp is already is sent to ${email}`,
+                data: {
+                    expiresAt: sentOPTMail.expiresAt,
+                },
+            });
+            return;
+        }
+
+        console.log("sentOPTMail:", sentOPTMail);
+
+        const randomOTP = Math.floor(Math.random() * 9000 + 1000);
+
+        const isMailSent = await sendOTPMail(email, randomOTP);
 
         if (!isMailSent) {
             res.status(500);
@@ -53,9 +75,14 @@ const generateOtp = async (req, res) => {
                 message: `Otp NOT sent to ${email}`,
                 data: {},
             });
+            return;
         }
 
-        // create a entry in database with that OTP
+        await OtpModel.create({
+            otp: randomOTP,
+            email,
+            userId: _id,
+        });
 
         res.status(201);
         res.json({
