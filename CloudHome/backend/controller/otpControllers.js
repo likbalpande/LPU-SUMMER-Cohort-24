@@ -42,11 +42,12 @@ const sendOTPMail = async (email, otp) => {
 const generateOtp = async (req, res) => {
     try {
         const { email, _id } = req.user;
+        const restrictedTimeForOTP = 10 * 60 * 1000;
 
         const sentOPTMail = await OtpModel.findOne({
             email,
-            expiresAt: {
-                $gte: Date.now(),
+            createdAt: {
+                $gte: Date.now() - restrictedTimeForOTP,
             },
         });
 
@@ -56,7 +57,7 @@ const generateOtp = async (req, res) => {
                 status: "success",
                 message: `Otp is already is sent to ${email}`,
                 data: {
-                    expiresAt: sentOPTMail.expiresAt,
+                    createdAt: sentOPTMail.createdAt,
                 },
             });
             return;
