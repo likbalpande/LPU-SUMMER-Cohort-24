@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 const OtpModel = require("../model/otpSchema");
+const UserModel = require("../model/userModel");
 
 const sendOTPMail = async (email, otp) => {
     try {
@@ -44,26 +45,23 @@ const generateOtp = async (req, res) => {
         const { email, _id } = req.user;
         const restrictedTimeForOTP = 10 * 60 * 1000;
 
-        const sentOPTMail = await OtpModel.findOne({
+        const sentOTPMail = await OtpModel.findOne({
             email,
             createdAt: {
                 $gte: Date.now() - restrictedTimeForOTP,
             },
         });
-
-        if (sentOPTMail) {
+        if (sentOTPMail) {
             res.status(200);
             res.json({
                 status: "success",
                 message: `Otp is already is sent to ${email}`,
                 data: {
-                    createdAt: sentOPTMail.createdAt,
+                    createdAt: sentOTPMail.createdAt,
                 },
             });
             return;
         }
-
-        console.log("sentOPTMail:", sentOPTMail);
 
         const randomOTP = Math.floor(Math.random() * 9000 + 1000);
 
@@ -103,4 +101,64 @@ const generateOtp = async (req, res) => {
     }
 };
 
-module.exports = { generateOtp };
+const verifyOtp = async (req, res) => {
+    try {
+        const { otp } = req.body;
+
+        console.log("\n✅ : otp:", otp);
+
+        const { email } = req.user;
+
+        const restrictedTimeForOTP = 10 * 60 * 1000; // milliseconds
+
+        const sentOTPMail = await OtpModel.findOne({
+            email,
+            createdAt: {
+                $gte: Date.now() - restrictedTimeForOTP,
+            },
+        });
+
+        console.log("\n✅ : sentOTPMail:", sentOTPMail);
+
+        if (!sentOTPMail) {
+            res.status(404);
+            res.json({
+                status: "fail",
+                message: "Verification failed. Please generate new OTP!",
+            });
+            return;
+        }
+
+        const hashedOtp = sentOTPMail.otp;
+        const isCorrect = await sentOTPMail.verifyOtp(otp + "", hashedOtp);
+
+        if (!isCorrect) {
+            res.status(400);
+            res.json({
+                status: "fail",
+                message: "Incorrect OTP!",
+            });
+            return;
+        }
+
+        await UserModel.findOneAndUpdate({ email }, { isEmailVerified: true });
+
+        res.status(200);
+        res.json({
+            status: "success",
+            message: "Verification successful",
+            data: {},
+        });
+    } catch (err) {
+        console.log("------------------------");
+        console.log(err);
+        console.log("------------------------");
+        res.status(500);
+        res.json({
+            status: "fail",
+            message: "Internal Server Error",
+        });
+    }
+};
+
+module.exports = { generateOtp, verifyOtp };

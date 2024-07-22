@@ -8,6 +8,7 @@ const authSlice = createSlice({
         isAuthorized: localStorage.getItem("userInfo") ? true : false,
         email: localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")).user.email : null,
         name: localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")).user.name : null,
+        userId: localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")).user._id : null,
         token: localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")).token : null,
         isEmailVerified: localStorage.getItem("userInfo")
             ? JSON.parse(localStorage.getItem("userInfo")).user.isEmailVerified
@@ -34,10 +35,25 @@ const authSlice = createSlice({
             state.isEmailVerified = false;
             localStorage.removeItem("userInfo");
         },
+        emailVerified: (state) => {
+            state.isEmailVerified = true;
+            localStorage.setItem(
+                "userInfo",
+                JSON.stringify({
+                    user: {
+                        email: state.email,
+                        name: state.name,
+                        isEmailVerified: state.isEmailVerified,
+                        _id: state.userId,
+                    },
+                    token: state.token,
+                })
+            );
+        },
     },
 });
 
-export const { appLogin, appLogout } = authSlice.actions;
+export const { appLogin, appLogout, emailVerified } = authSlice.actions;
 
 const authReducer = authSlice.reducer;
 export default authReducer;
