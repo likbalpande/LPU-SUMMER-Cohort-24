@@ -15,7 +15,11 @@ const HomePage = () => {
     const parentFolder = folderStructure[folderStructure.length - 1];
 
     const handleDoubleClick = (elem) => {
-        setFolderStructure([...folderStructure, elem]);
+        if (elem.type == "folder") {
+            setFolderStructure([...folderStructure, elem]);
+        } else {
+            window.open(elem.link);
+        }
     };
 
     const handleAllowCreateFolder = () => {
@@ -43,13 +47,14 @@ const HomePage = () => {
     };
     //-----------------------------------------------------------------------
     const { isUploadAllowed, uploadFile } = useUploadFile();
-    const handleFileUpload = (e) => {
+    const handleFileUpload = async (e) => {
         if (isUploadAllowed) {
             const file = e.target.files;
-            uploadFile({
+            await uploadFile({
                 file: file[0],
                 parentId: parentFolder._id,
             });
+            getFileFolders(parentFolder._id);
         } else {
             alert("Uploading is already in progress. Please wait...");
         }
