@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/navbar";
 import useCreateFolder from "../hooks/useCreateFolder";
 import useGetFileFolders from "../hooks/useGetFileFolders";
+import useUploadFile from "../hooks/useUploadFile";
 
 const HomePage = () => {
     const [newFolder, setNewFolder] = useState("");
+    const inputRef = useRef(null);
     const [showCreateFolder, setShowCreateFolder] = useState(false);
     const { createFolder } = useCreateFolder();
-    const [folderStructure, setFolderStructure] = useState([{ _id: null }]);
+    const [folderStructure, setFolderStructure] = useState([{ _id: null, name: "Cloud Home" }]);
     const { getFileFolders, fileFolders } = useGetFileFolders();
 
     const parentFolder = folderStructure[folderStructure.length - 1];
@@ -35,14 +37,36 @@ const HomePage = () => {
         getFileFolders(parentFolder._id);
     }, [folderStructure]);
 
+    const handleBackClick = (clickIdx) => {
+        const newFolderStructure = folderStructure.filter((elem, idx) => idx <= clickIdx);
+        setFolderStructure(newFolderStructure);
+    };
+    //-----------------------------------------------------------------------
+    const { isUploadAllowed, uploadFile } = useUploadFile();
+    const handleFileUpload = (e) => {
+        if (isUploadAllowed) {
+            const file = e.target.files;
+            uploadFile({
+                file: file[0],
+                parentId: parentFolder._id,
+            });
+        } else {
+            alert("Uploading is already in progress. Please wait...");
+        }
+    };
+    //-----------------------------------------------------------------------
     return (
         <div>
             <Navbar />
             <div className="homepage-main-container">
                 <h3>Welcome to Cloud Home</h3>
                 <button onClick={handleAllowCreateFolder}>Create Folder</button>
-                <button>Upload File</button>
-                <h4>Cloud Home</h4>
+                <input className="file-upload-input" ref={inputRef} type="file" onChange={handleFileUpload} />
+                <ul style={{ display: "flex", padding: "24px", gap: "24px" }}>
+                    {folderStructure.map((elem, idx) => {
+                        return <li onClick={() => handleBackClick(idx)}>{elem.name}</li>;
+                    })}
+                </ul>
                 <div>
                     {showCreateFolder && (
                         <div style={{ margin: "24px", padding: "24px", backgroundColor: "yellow" }}>
@@ -57,7 +81,7 @@ const HomePage = () => {
                         return (
                             <div
                                 style={{
-                                    backgroundColor: "yellow",
+                                    backgroundColor: elem.type === "folder" ? "yellow" : "orange",
                                     border: "1px solid grey",
                                     borderRadius: "8px",
                                     width: "fit-content",
