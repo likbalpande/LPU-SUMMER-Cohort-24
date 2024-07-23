@@ -1,19 +1,22 @@
 import { useState } from "react";
 import Navbar from "../components/navbar";
 import useCreateFolder from "../hooks/useCreateFolder";
+import useGetFileFolders from "../hooks/useGetFileFolders";
 
 const HomePage = () => {
     const [newFolder, setNewFolder] = useState("");
     const [showCreateFolder, setShowCreateFolder] = useState(false);
     const { createFolder } = useCreateFolder();
+    const { getFileFolders, fileFolders } = useGetFileFolders();
 
     const handleAllowCreateFolder = () => {
         setShowCreateFolder(true);
     };
 
-    const handleCreateFolder = () => {
+    const handleCreateFolder = async () => {
         if (newFolder.length > 0) {
-            createFolder({ name: newFolder });
+            await createFolder({ name: newFolder });
+            setShowCreateFolder(false);
         }
     };
 
@@ -33,6 +36,11 @@ const HomePage = () => {
                             <button onClick={() => setShowCreateFolder(false)}>Cancel</button>
                         </div>
                     )}
+                </div>
+                <div>
+                    {fileFolders.map((elem) => {
+                        return <div>{elem.name}</div>;
+                    })}
                 </div>
             </div>
         </div>
